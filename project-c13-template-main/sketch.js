@@ -26,11 +26,46 @@ rabbit.addImage(rabbitImg);
 
 function draw() {
   background(0);
-
+rabbit.x=World.mouseX;
 
   edges= createEdgeSprites();
   rabbit.collide(edges);
 
   drawSprites();
   
+var select_sprites=Math.round(random(1,3));
+
+if (frameCount % 80 == 0){
+  if (select_sprites == 1){
+createApples();
+  } else if (select_sprites == 2) {
+
+    createOrange();
+  }else {
+    createRed();
+  }
+
+}
+}
+
+function createOrange() {
+  orangeL = createSprite(random(50, 350),40, 10, 10);
+  orangeL.addImage(orangeImg);
+  orangeL.scale=0.08;
+  orangeL.velocityY = 3;
+  orangeL.lifetime=150;
+}
+function createOrange() {
+  appleL = createSprite(random(50, 350),40, 10, 10);
+  appleL.addImage(appleImg);
+  appleL.scale=0.08;
+  appleL.velocityY = 3;
+  appleL.lifetime=150;
+}
+function createOrange() {
+  redL = createSprite(random(50, 350),40, 10, 10);
+  redL.addImage(orangeImg);
+  redL.scale=0.08;
+  redL.velocityY = 3;
+  redL.lifetime=150;
 }
